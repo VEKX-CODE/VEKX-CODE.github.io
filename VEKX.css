@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+/* сверху импортировать шрифты с гугл фонтс */
+
+
+* {
+  font-family: "Press Start 2P", monospace;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
+  font-smooth: never;
+}
+
+body {
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  text-align: center;     
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px 0;
+}
+
+h1 {
+  color: #ff0000;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+a {
+  color: #ff0000;
+  font-size: 12px;
+}
+
+p {
+    color: #ff0000;
+  font-size: 18px;
+}
+
+/* добавлять сверху любой стиль не относящийся к проэктам */
+/* стили проэктов снизу */
+
+#LINKS {
+  padding-bottom: 10px;
+}
+
+#VFIX {
+  border-radius: 100px;
+  border: 2.5px solid #ff0000;
+  box-sizing: border-box; /* Важно: чтобы рамка не вылезала за пределы 160px */
+  transition: border-color 0.1s ease;
+}
+
+.project-capsule:hover #VFIX {
+  border-color: transparent;
+}
+
+#VUIX {
+
+  border-radius: 100px;
+  border: 2.5px solid red;
+}
+
+.IMG {
+  display: flex;
+}
+
+#VEKX {
+  border-radius: 100px;
+}
+
+.cards-container {
+  display: flex;
+  width: 400px;
+  margin-top: 15px;
+}
+
+.card-info {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-box {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Скрываем текст со статусом и звёздами, когда капсула раскрыта наведением */
+.project-capsule:hover + .card-info {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-info a,
+.card-info div {
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 12px;
+  text-align: center;
+}
+
+#bg-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Сама общая красная капсула */
+.project-capsule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 250px;
+  border: 2.5px solid #ff0000;
+  border-radius: 120px;
+  background-color: #000000;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+  /* ПЛАВНОСТЬ РАСКРЫТИЯ КАПСУЛЫ */
+  transition: width 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Центральный логотип */
+.capsule-center {
+  flex-shrink: 0;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capsule-center img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Боковые створки (левая и правая) */
+.capsule-side {
+  width: 0px;             
+  opacity: 0;            
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 11px;
+  color: #ff0000;
+  gap: 8px;
+  /* Плавное раскрытие содержимого */
+  transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+.capsule-side img {
+  width: 95%;
+  height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Вертикальные красные разделители */
+.capsule-mobile {
+  border-right: 2.5px solid transparent;
+}
+
+.capsule-pc {
+  border-left: 2.5px solid transparent;
+}
+
+.project-capsule:hover {
+  width: 800px; 
+  border-radius: 30px; 
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); 
+}
+
+/* Раскрываем левую створку */
+.project-capsule:hover .capsule-mobile {
+  width: 275px;
+  opacity: 1;
+  border-right: 2.5px solid #ff0000; 
+}
+
+/* Раскрываем правую створку */
+.project-capsule:hover .capsule-pc {
+  width: 275px;
+  opacity: 1;
+  border-left: 2.5px solid #ff0000; 
+}
+/* Окно модалки (по умолчанию скрыто) */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000; /* Поверх всего сайта и 3D-фона */
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85); /* Полупрозрачный черный */
+  backdrop-filter: blur(5px);            /* Стильное размытие заднего плана */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none; /* Пока скрыто — клики сквозь него */
+  transition: opacity 0.3s ease; /* Плавное проявление */
+}
+
+/* Когда окно активно (открыто) */
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Сама увеличенная картинка */
+.modal-content {
+  max-width: 85%;
+  max-height: 80vh;
+  border: 2px solid #ff0000;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #ff0000;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.2s, text-shadow 0.2s;
+  user-select: none;
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 15px #ff0000;
+}
+
+#modal-caption {
+  margin-top: 15px;
+  color: #ff0000;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Контейнер двух этажей */
+.capsule-slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out; /* Плавный переезд этажей */
+}
+
+/* Каждый этаж ровно под высоту капсулы */
+.capsule-floor {
+  width: 100%;
+  height: 200px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Кнопка перехода к описанию под логотипом */
+.desc-toggle-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ff0000;
+  cursor: pointer;
+  position: absolute;
+  bottom: 8px;
+  user-select: none;
+  gap: 3px;
+  transition: transform 0.2s, text-shadow 0.2s;
+}
+
+.desc-toggle-btn .btn-text {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.desc-toggle-btn .btn-arrow {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.desc-toggle-btn:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px #ff0000;
+}
+
+.desc-toggle-btn:hover .btn-arrow {
+  transform: translateY(2px);
+}
+
+/* 2-Й ЭТАЖ: Описание */
+.floor-description {
+  padding: 15px 30px;
+}
+
+.desc-scroll-area {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Если описание очень длинное — прокручивается */
+  padding-right: 5px;
+}
+
+.desc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+  font-size: 10px;
+  color: #ff0000;
+  border-bottom: 1px dashed #ff0000;
+  padding-bottom: 6px;
+}
+
+.back-btn {
+  cursor: pointer;
+  font-size: 9px;
+  transition: transform 0.2s;
+}
+
+.back-btn:hover {
+  transform: scale(1.15);
+  text-shadow: 0 0 8px #ff0000;
+}
+
+.floor-description p {
+  color: #ff0000;
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: left;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Когда активен 2-й этаж — сдвигаем слайдер наверх! */
+.capsule-slider.show-desc {
+  transform: translateY(-200px);
+}
