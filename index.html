@@ -1,65 +1,122 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VEKX INF</title>
     <link rel="stylesheet" href="VEKX.css" />
     <link rel="icon" type="image/png" href="VEKX.png" />
-      <script src="script.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-      <script src="bg-3d.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="bg-3d.js" defer></script>
   </head>
   <body>
     <canvas id="bg-3d"></canvas>
-    <div id="LINKS">
-    <img id="VEKX" src="VEKX_BIO.png" height="200" width="250" >
-    <h1>LINKS</h1>
-    <a href="https://github.com/VEKX-CODE">Github</a>
-    <a href="https://www.youtube.com/@From_VEKX">Youtube</a>
-    <a href="https://www.tiktok.com/@from_vekx">TikTok</a>
-    </div>  
-<!--VFIX-->
-<h1>PROJECTS</h1>
-<div class="project-capsule" id="capsule-VFIX">
-  <div class="capsule-slider">
     
-    <!-- ЭТАЖ 1: СКРИНШОТЫ + ЛОГО -->
-    <div class="capsule-floor floor-preview">
-      <!-- Мобильный скрин -->
-      <div class="capsule-side capsule-mobile">
-        <img src="VFIX_MB.jpg" alt="Mobile" />
-      </div>
-      <!-- ЛОГО -->
-<div class="capsule-center">
-  <a href="https://github.com/VEKX-CODE/VFIX" target="_blank">
-    <img id="VFIX" src="VFIX.png" />
-  </a>
-  
-  <div class="desc-toggle-btn" id="btn-to-desc">
-    <span class="btn-text">DESCRIPTION</span>
-    <span class="btn-arrow">▼</span>
-  </div>
-</div>
-      <!-- ПК скрин -->
-      <div class="capsule-side capsule-pc">
-        <img src="VFIX_PC.png" alt="PC" />
-      </div>
-    </div>
-    <!-- ЭТАЖ 2: ОПИСАНИЕ ИЗ GITHUB (НА ВСЮ ШИРИНУ РАМКИ) -->
-    <div class="capsule-floor floor-description">
-      <div class="desc-scroll-area">
-        <div class="desc-header">
-          <span>PROJECT DESCRIPTION</span>
-          <div class="back-btn" id="btn-to-preview">▲ BACK</div>
+    <div id="LINKS">
+      <img id="VEKX" src="VEKX_BIO.png" height="200" width="250" alt="VEKX BIO">
+      <h1>LINKS</h1>
+      <a href="https://github.com/VEKX-CODE" target="_blank">Github</a>
+      <a href="https://www.youtube.com/@From_VEKX" target="_blank">Youtube</a>
+      <a href="https://www.tiktok.com/@from_vekx" target="_blank">TikTok</a>
+    </div>  
+
+    <h1>PROJECTS</h1>
+
+    <!-- 1. VFIX PROJECT -->
+    <div class="project-wrapper">
+      <div class="project-capsule" id="capsule-VFIX">
+        <div class="capsule-slider">
+          
+          <!-- ЭТАЖ 1: СКРИНШОТЫ + ЛОГО -->
+          <div class="capsule-floor floor-preview">
+            <div class="capsule-side capsule-mobile">
+              <img src="VFIX_MB.jpg" alt="VFIX Mobile" />
+            </div>
+            <div class="capsule-center">
+              <a href="https://github.com/VEKX-CODE/VFIX" target="_blank">
+                <img id="VFIX" src="VFIX.png" alt="VFIX Logo" />
+              </a>
+              <div class="desc-toggle-btn" id="btn-to-desc-VFIX">
+                <span class="btn-text">DESCRIPTION</span>
+                <span class="btn-arrow">▼</span>
+              </div>
+            </div>
+            <div class="capsule-side capsule-pc">
+              <img src="VFIX_PC.png" alt="VFIX PC" />
+            </div>
+          </div>
+
+          <!-- ЭТАЖ 2: ОПИСАНИЕ ИЗ GITHUB -->
+          <div class="capsule-floor floor-description">
+            <div class="desc-scroll-area">
+              <div class="desc-header">
+                <span>PROJECT // VFIX</span>
+                <div class="back-btn" id="btn-to-preview-VFIX">▲ BACK</div>
+              </div>
+              <p id="desc-text-VFIX">Loading description from GitHub...</p>
+            </div>
+          </div>
+
         </div>
-        <p id="desc-text-VFIX">Loading description from GitHub...</p>
+      </div>
+      <div class="card-info">
+        <a id="STARS_VFIX" href="https://github.com/VEKX-CODE/VFIX" target="_blank">Stars: ...</a>
+        <div id="VER_VFIX">Ver: ...</div>
+        <div id="STATUS_VFIX">Status: ...</div>
       </div>
     </div>
-  </div>
-</div>
-  <div class="card-info">
-    <a id="STARS_VFIX" href="https://github.com/VEKX-CODE/VFIX" target="_blank">Stars: ...</a>
-    <div id="VER_VFIX">Ver: ...</div>
-    <div id="STATUS_VFIX">Status: ...</div>
-  </div>
+
+    <!-- 2. VUCX PROJECT (RELEASED) -->
+    <div class="project-wrapper">
+      <div class="project-capsule" id="capsule-VUCX">
+        <div class="capsule-slider">
+          
+          <!-- ЭТАЖ 1: ЛОГОТИП VUCX -->
+          <div class="capsule-floor floor-preview">
+            <div class="capsule-side capsule-mobile">
+              <img src="VUCX.jpg" alt="VUCX Preview" />
+            </div>
+            <div class="capsule-center">
+              <a href="https://github.com/VEKX-CODE/VUCX" target="_blank">
+                <img id="VUCX" src="VUCX.jpg" alt="VUCX Logo" />
+              </a>
+              <div class="desc-toggle-btn" id="btn-to-desc-VUCX">
+                <span class="btn-text">DESCRIPTION</span>
+                <span class="btn-arrow">▼</span>
+              </div>
+            </div>
+            <div class="capsule-side capsule-pc">
+              <img src="VUCX.jpg" alt="VUCX Preview" />
+            </div>
+          </div>
+
+          <!-- ЭТАЖ 2: ОПИСАНИЕ VUCX ИЗ GITHUB -->
+          <div class="capsule-floor floor-description">
+            <div class="desc-scroll-area">
+              <div class="desc-header">
+                <span>PROJECT // VUCX</span>
+                <div class="back-btn" id="btn-to-preview-VUCX">▲ BACK</div>
+              </div>
+              <p id="desc-text-VUCX">Loading description from GitHub...</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="card-info">
+        <a id="STARS_VUCX" href="https://github.com/VEKX-CODE/VUCX" target="_blank">Stars: ...</a>
+        <div id="VER_VUCX">Ver: ...</div>
+        <div id="STATUS_VUCX">Status: ...</div>
+      </div>
+    </div>
+
+    <!-- МОДАЛКА ЗУМА СКРИНШОТОВ -->
+    <div id="image-modal" class="modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modal-img" src="" alt="Fullscreen Preview">
+      <div id="modal-caption"></div>
+    </div>
+
   </body>
 </html>

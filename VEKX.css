@@ -43,14 +43,15 @@ p {
   padding-bottom: 10px;
 }
 
-#VFIX {
+#VFIX, #VUCX {
   border-radius: 100px;
   border: 2.5px solid #ff0000;
-  box-sizing: border-box; /* Важно: чтобы рамка не вылезала за пределы 160px */
+  box-sizing: border-box;
   transition: border-color 0.1s ease;
 }
 
-.project-capsule:hover #VFIX {
+.project-capsule:hover #VFIX,
+.project-capsule:hover #VUCX {
   border-color: transparent;
 }
 
@@ -82,12 +83,11 @@ p {
   gap: 6px;
 }
 
-.project-box {
+.project-wrapper {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  margin-top: 10px;
-  margin-bottom: 25px;
+  align-items: center;
+  margin-bottom: 35px;
 }
 
 .card-info {
@@ -376,4 +376,4 @@ p {
 /* Когда активен 2-й этаж — сдвигаем слайдер наверх! */
 .capsule-slider.show-desc {
   transform: translateY(-200px);
-}
+} 
